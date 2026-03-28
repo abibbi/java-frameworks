@@ -27,6 +27,8 @@ D287 – JAVA FRAMEWORKS
 | `src/main/resources/templates/About.html` | 116–137 | Main content: heading **Who We Are**, tagline, and paragraphs describing **BC Skateboard Shop** (mission, products, community). |
 | `src/main/resources/templates/mainscreen.html` | 127–130 | Top navigation **About us** link to `about.html` so users can open the About page from the main inventory screen. |
 
+
+
 ## Part E  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
 | File | Line(s) | Change |
@@ -35,6 +37,7 @@ D287 – JAVA FRAMEWORKS
 | `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 48–50 | Five skateboard-related parts; comment documents using a **4-pack** wheel part so duplicate part rows are not required where the product–part relation uses a `Set`. |
 | `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 52–95 | Creates and saves five parts (in-house and outsourced) with prices and inventory. |
 | `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 98–164 | Creates five products, associates them with the sample parts, and saves products and updated parts. |
+| `src/main/java/com/example/demo/domain/Part.java` | 28–40 | Added **`inv`** (`@Min(0)`), **`minValue`** and **`maxValue`** (`@Min` / `@Max` for maximum cap), and **`price`** (`@Min(0)`) on the **Part** entity so each part row can hold current inventory, min/max bounds, and price—aligned with sample parts created in bootstrap data. |
 
 ---
 
