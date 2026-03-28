@@ -24,10 +24,20 @@ public abstract class Part implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     String name;
-    @Min(value = 0, message = "Price value must be positive")
-    double price;
+
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+    
+    @Min(value = 0, message = "Minimum inventory must be positive")
+    int minValue;
+
+    @Min(value = 0, message = "Maximum inventory must be positive")
+    @Max(value = 200, message = "Maximum inventory value must fall within set maximum")
+    int maxValue;
+    
+    @Min(value = 0, message = "Price value must be positive")
+    double price;
+   
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
