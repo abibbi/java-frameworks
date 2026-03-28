@@ -27,10 +27,18 @@ D287 – JAVA FRAMEWORKS
 | `src/main/resources/templates/About.html` | 116–137 | Main content: heading **Who We Are**, tagline, and paragraphs describing **BC Skateboard Shop** (mission, products, community). |
 | `src/main/resources/templates/mainscreen.html` | 127–130 | Top navigation **About us** link to `about.html` so users can open the About page from the main inventory screen. |
 
-E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+## Part E  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+
+| File | Line(s) | Change |
+|------|---------|--------|
+| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 42–45 | Sample data runs only when both part and product repository counts are zero, so existing database rows are not overwritten. |
+| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 48–50 | Five skateboard-related parts; comment documents using a **4-pack** wheel part so duplicate part rows are not required where the product–part relation uses a `Set`. |
+| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 52–95 | Creates and saves five parts (in-house and outsourced) with prices and inventory. |
+| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 98–164 | Creates five products, associates them with the sample parts, and saves products and updated parts. |
+
+---
 
 
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
