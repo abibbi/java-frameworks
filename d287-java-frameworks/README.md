@@ -4,14 +4,28 @@ WESTERN GOVERNORS UNIVERSITY
 D287 – JAVA FRAMEWORKS
 
 
-C.  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+## Part C  Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+
+| File | Line(s) | Change |
+|------|---------|--------|
+| `src/main/resources/templates/mainscreen.html` | 14 | Set the document `<title>` to the shop name **BC Skateboard Shop**. |
+| `src/main/resources/templates/mainscreen.html` | 16–117 | Added custom CSS (variables, body background, sticky nav, hero and section card styling, table tweaks) to customize the look of the main screen without removing required elements. |
+| `src/main/resources/templates/mainscreen.html` | 121–132 | Added a top navigation bar showing the shop name (**BC Skateboard Shop**) with a brand badge and a link to the About page. |
+| `src/main/resources/templates/mainscreen.html` | 134–137 | Added a hero block with **BC Skateboard Shop** as the main heading and a subtitle that describes managing skateboard **parts** and **products**. |
+| `src/main/resources/templates/mainscreen.html` | 139–172 | Wrapped the **Parts** area in a section card; kept the parts table with column header **Part Name** (line 154) and each row showing the part name via `th:text="${tempPart.name}"` (lines 161–162). |
+| `src/main/resources/templates/mainscreen.html` | 174–211 | Wrapped the **Products** area in a section card; kept the products table with column header **Product Name** (line 193) and each row showing the product name via `th:text="${tempProduct.name}"` (lines 200–201). |
 
 
-Note: Do not remove any elements that were included in the screen. You may add any additional elements you would like or any images, colors, and styles, although it is not required.
 
+## Part D  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
-D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-
+| File | Line(s) | Change |
+|------|---------|--------|
+| `src/main/resources/templates/About.html` | 14 | Set the document `<title>` to **About - BC Skateboard Shop**. |
+| `src/main/resources/templates/About.html` | 16–102 | Added page styling (CSS variables, body background, sticky nav, content card) aligned with the main screen look. |
+| `src/main/resources/templates/About.html` | 105–114 | Top navigation: **Home** links to `mainscreen.html` (return to main screen); **About us** links to `about.html` (current page). |
+| `src/main/resources/templates/About.html` | 116–137 | Main content: heading **Who We Are**, tagline, and paragraphs describing **BC Skateboard Shop** (mission, products, community). |
+| `src/main/resources/templates/mainscreen.html` | 127–130 | Top navigation **About us** link to `about.html` so users can open the About page from the main inventory screen. |
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
