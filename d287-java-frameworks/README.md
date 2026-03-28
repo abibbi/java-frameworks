@@ -33,12 +33,12 @@ D287 – JAVA FRAMEWORKS
 
 | File | Line(s) | Change |
 |------|---------|--------|
-| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 42–45 | Sample data runs only when both part and product repository counts are zero, so existing database rows are not overwritten. |
-| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 48–50 | Five skateboard-related parts; comment documents using a **4-pack** wheel part so duplicate part rows are not required where the product–part relation uses a `Set`. |
-| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 52–95 | Creates and saves five parts (in-house and outsourced) with prices and inventory. |
-| `src/main/java/com/example/demo/bootstrap/BootStrapData.java` | 98–164 | Creates five products, associates them with the sample parts, and saves products and updated parts. |
-| `src/main/java/com/example/demo/domain/Part.java` | 28–40 | Added **`inv`** (`@Min(0)`), **`minValue`** and **`maxValue`** (`@Min` / `@Max` for maximum cap), and **`price`** (`@Min(0)`) on the **Part** entity so each part row can hold current inventory, min/max bounds, and price—aligned with sample parts created in bootstrap data. |
-
+| `src/main/resources/templates/mainscreen.html` | 14 | Set the document `<title>` to the shop name **BC Skateboard Shop**. |
+| `src/main/resources/templates/mainscreen.html` | 16–118 | Added custom CSS (variables, body background, sticky nav, hero and section card styling, table tweaks) to customize the look of the main screen without removing required elements. |
+| `src/main/resources/templates/mainscreen.html` | 121–132 | Added a top navigation bar showing the shop name (**BC Skateboard Shop**) with a brand badge and a link to the About page. |
+| `src/main/resources/templates/mainscreen.html` | 134–137 | Added a hero block with **BC Skateboard Shop** as the main heading and a subtitle that describes managing skateboard **parts** and **products**. |
+| `src/main/resources/templates/mainscreen.html` | 139–172 | Wrapped the **Parts** area in a section card; kept the parts table with column header **Part Name** (line 154) and each row showing the part name via `th:text="${tempPart.name}"` (lines 162–163). |
+| `src/main/resources/templates/mainscreen.html` | 174–211 | Wrapped the **Products** area in a section card; kept the products table with column header **Product Name** (line 193) and each row showing the product name via `th:text="${tempProduct.name}"` (lines 20
 ---
 
 
