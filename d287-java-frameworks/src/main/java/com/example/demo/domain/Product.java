@@ -31,6 +31,8 @@ public class Product implements Serializable {
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
+    public Product(){
+    }
 
     public Product(String name, double price, int inv) {
         this.name = name;
