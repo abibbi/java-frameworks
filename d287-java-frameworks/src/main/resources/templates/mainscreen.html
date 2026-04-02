@@ -126,7 +126,7 @@
         </li>
         <li>Home</li>
         <li>
-            <a href="about.html">About us</a>
+            <a th:href="@{/about}">About us</a>
         </li>
     </ul>
 </div>
@@ -137,77 +137,77 @@
     </div>
     <hr>
     <div class="section-card mt-3">
-    <h2>Parts</h2>
-    <form th:action="@{/mainscreen}">
-        Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
-        &nbsp;
-        <input type="submit" value="Search" />
-        &nbsp;
-        <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
-    </form>
-    <br><br>
-    <a th:href="@{/showFormAddInPart}" class="btn btn-primary btn-sm mb-3">Add Inhouse Part</a>
-    <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-sm mb-3">Add Outsourced Part</a>
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-        <tr>
-            <th>Part Name</th>
-            <th>Price</th>
-            <th>Inventory</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="tempPart : ${parts}">
-            <td th:text="${tempPart.name}">fast wheels</td>
-            <td th:text="${tempPart.price}">1</td>
-            <td th:text="${tempPart.inv}">1</td>
-            <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
-                   onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+        <h2>Skateboard Gear</h2>
+        <form th:action="@{/mainscreen}">
+            Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
+            &nbsp;
+            <input type="submit" value="Search" />
+            &nbsp;
+            <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
+        </form>
+        <br><br>
+        <a th:href="@{/showFormAddInPart}" class="btn btn-primary btn-sm mb-3">Add Inhouse Part</a>
+        <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-sm mb-3">Add Outsourced Part</a>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Part Name</th>
+                <th>Price</th>
+                <th>Inventory</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tempPart : ${parts}">
+                <td th:text="${tempPart.name}"></td>
+                <td th:text="${tempPart.price}">1</td>
+                <td th:text="${tempPart.inv}">1</td>
+                <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                    <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
+                       onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="section-card mt-4">
-    <h2>Products</h2>
-    <form th:action="@{/mainscreen}">
-        Filter: <input type="text" name="productkeyword" id="productkeyword" size="50" th:value="${productkeyword}" required />
-        &nbsp;
-        <input type="submit" value="Search" />
-        &nbsp;
-        <input type="button" value="Clear" id="btnClearProduct" onclick="clearSearch()" />
-    </form>
-    <script type="text/javascript">
-        function clearSearch() {
-            window.location = "[[@{/}]]";
-        }
-    </script>
-    <br><br>
-    <a th:href="@{/showFormAddProduct}" class="btn btn-primary btn-sm mb-3">Add Product</a>
-    <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-        <tr>
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Inventory</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="tempProduct : ${products}">
-            <td th:text="${tempProduct.name}">1</td>
-            <td th:text="${tempProduct.price}">1</td>
-            <td th:text="${tempProduct.inv}">1</td>
-            <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
-                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
-                   onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+        <h2>Complete Skateboard setups</h2>
+        <form th:action="@{/mainscreen}">
+            Filter: <input type="text" name="productkeyword" id="productkeyword" size="50" th:value="${productkeyword}" required />
+            &nbsp;
+            <input type="submit" value="Search" />
+            &nbsp;
+            <input type="button" value="Clear" id="btnClearProduct" onclick="clearSearch()" />
+        </form>
+        <script type="text/javascript">
+            function clearSearch() {
+                window.location = "[[@{/}]]";
+            }
+        </script>
+        <br><br>
+        <a th:href="@{/showFormAddProduct}" class="btn btn-primary btn-sm mb-3">Add Product</a>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Inventory</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tempProduct : ${products}">
+                <td th:text="${tempProduct.name}">1</td>
+                <td th:text="${tempProduct.price}">1</td>
+                <td th:text="${tempProduct.inv}">1</td>
+                <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                    <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
+                       onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 </body>
